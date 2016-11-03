@@ -3,7 +3,7 @@ version: '2'
 services:
   app:
     image: webapp:0.0.1
-    command: /bin/bash -c 'sleep 10000'  # go get -v && go run main.go
+    command: /bin/bash -c 'go get -v && go run main.go'
     build:
       context: .
     links:
