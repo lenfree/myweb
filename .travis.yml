@@ -9,5 +9,5 @@ deploy:
     - release/go-myweb-linux-amd64
     - release/go-myweb-darwin-amd64
   on:
-    repo: lenfree/myweb
+    repo: lenfree/go-myweb
     tags: true
