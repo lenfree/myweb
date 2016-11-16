@@ -1,0 +1,11 @@
+language: go
+go:
+- 1.7
+deploy:
+  provider: releases
+  api_key:
+    secure: Bnsjwo2F/Q1dqyo7Re8QwBZR2XCYxWLww5xrlnWmifs2d4voOnOkfIx98FfvicBJjRMxtLgz9KdT5QA4YeIbKYEU6YkRtQFZH7ePGWBjKrzVMKRQ2FXup9UugNGNUdqCx/oTuvZfV4WpmEzbgxhaptmhSZ2+9Wup3QGX4yiA1LC2HNj5PwtvL9Ze4AaY+Qmz/OyxiPnw+xAst+goLORE/zSMmyS3mASBprVjNHu0z2UnQKWRVN9uswAY5fPtCi26IZYKWfdVzCEfZadc/9eJooSZgzyEOI3x+K3k95YCxmuvNMmfhwobu2lyOpCTu9PZSUDh0MXAN2YpDbrvE7yy5nvXg34Dq5LviYjoGNSSdBNi9IW7Vcbe5hzFif3G2dA36udlPiB2hv9iG/4q9nIov3y3QS04O2rkHVNS+fPvTO8UuTYSRhkpM5ScmDMhAYGfALvPtv47pZKWr2mAV4sXFJ27LBq+9/J+VX+muzazQ5Cs3UeZh4nl+3wSxdCRLb2YSoLQ1gqL7AGQsX6oHhEUfL4PHc+hGczJ3eSeVe1rF9njWiWDik/QUdzKacxAFvAcWpiVRssSeMqghRhuHVGw0Pk+Ce6jHAMlNMLemjGea/UXwSrcZIsEKw3jDacmUPMWbzUjXR8PeYA+zY/zvv1ODR5q+5N418Rgq2F5FRUBFko=
+  file: release/gomyweb-linux-amd64
+  on:
+    repo: lenfree/myweb
+    tags: true

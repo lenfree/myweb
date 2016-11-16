@@ -4,8 +4,7 @@ import (
         "io"
         "log"
         "net/http"
-        "fmt"
-        "html"
+        "os"
 
         "gopkg.in/redis.v5"
 )
@@ -25,10 +24,17 @@ func ping(w http.ResponseWriter, r *http.Request) {
         }
 }
 
+func returnHostname(w http.ResponseWriter, r *http.Request) {
+        name, err := os.Hostname()
+        if err != nil {
+                io.WriteString(w, err.Error())
+        } else {
+                io.WriteString(w, name)
+        }
+}
+
 func main() {
-        http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-                fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
-        })
         http.HandleFunc("/health", ping)
+        http.HandleFunc("/", returnHostname)
         log.Fatal(http.ListenAndServe(":8000", nil))
 }
